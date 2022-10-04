@@ -1,15 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 
 
-    <link rel="stylesheet" href="./assets/scss/base.scss">
+  <link rel="stylesheet" href="./assets/scss/base.scss">
 </head>
+
 <body>
 
+  <main>
+    <section class="welcome--section section--active">
+      <div class="container">
+        <div class="left" data-parallax-speed="3">
+          <h3> I love taking pictures ! </h3>
+          <h1> Hello and Welcome ! </h1>
+          <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, aspernatur? Laudantium, consequuntur, officiis odit nulla possimus qui magnam veniam minus similique asperiores veritatis ut repudiandae culpa ad repellat libero nemo. </p>
+
+          <button data-redirection="collections--section"> Entrée sur le site </button>
+        </div>
+        <div class="float right">
+          <img src="./assets/img/base.jpg" data-parallax-speed="5"  alt="">
+          <img src="./assets/img/base.jpg" data-parallax-speed="2" alt="">
+          <img src="./assets/img/base.jpg" data-parallax-speed="8" alt="">
+        </div>
+      </div>
+    </section>
+
+    <section class="collections--section section--inactive">
+      <div class="collections--cards" data-scroll-container></div>
+      <div class="collections--informations" data-parallax-speed="5">
+      </div>
+    </section>
+
+    <section class="collection--pictures section--inactive">
+      <p> La suite arrive hihi, soit patient </p>
+    </section>
+
+  </main>
+
+  <script type="module" src="/assets/js/base.js"></script>
 </body>
+
 </html>

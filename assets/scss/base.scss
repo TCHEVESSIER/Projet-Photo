@@ -1,9 +1,389 @@
-// Global SCSS
 
-@import './global/colors';
+
+// Import Global SCSS
+
 @import './global/reset';
+@import './global/colors';
+
+// Import Specific Componants SCSS
 
 
-// Imports Components Styles
+@import './components/card';
 
-@import './components/header';
+body {
+  background-color: $color--yellow;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  margin: 0;
+  text-align: center;
+  font: 900 120% system-ui, sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  font-size: 18px;
+}
+
+main {
+  position: relative;
+}
+
+.welcome--section {
+  background-color: $color--yellow;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 2;
+
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    height: 100%;
+    flex-wrap: wrap;
+    max-width: 80%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .left {
+    width: 100%;
+    height: 80%;
+    padding: 25px 25px 25px 0;
+    height: auto;
+    position: relative;
+    z-index: 2;
+
+    h3 {
+      background-color: transparent;
+    }
+
+    h1 {
+      margin: 1rem 0;
+      font-size: 64px;
+    }
+
+    button {
+      display: block;
+      text-align: center;
+      padding: 20px 15px;
+      box-shadow: 0 0 0 5px $color--red;
+      background-color: transparent;
+      cursor: pointer;
+      border: none;
+      margin-top: 75px;
+      color: $color--red;
+      font-weight: 600;
+      font-size: 25px;
+      width: fit-content;
+      font-family: 'Presicav';
+      overflow: hidden;
+      position: relative;
+      transition: color .5s cubic-bezier(0.42, 0, 0, 1);
+  
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0%;
+        background-color: $color--red;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform .5s cubic-bezier(0.42, 0, 0, 1);
+        z-index: -1;
+      }
+  
+      &:hover {
+        transition: all .5s cubic-bezier(0.42, 0, 0, 1);
+        color: $color--white;
+        &::before {
+          transform: scaleX(1);
+          transform-origin: left;
+          transition: transform .5s cubic-bezier(0.42, 0, 0, 1);
+        }
+      }
+    }
+  }
+
+  .right {
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+
+    img {
+      object-fit: cover;
+      opacity: 0.2;
+      position: absolute;
+      transition-timing-function: cubic-bezier(0.42, 0, 0, 1);
+
+      &:first-child {
+        width: 250px;
+        height: 450px;
+        left: 0;
+        top: 0;
+      }
+
+      &:nth-child(2) {
+        right: 0;
+        top: 15%;
+        width: 350px;
+        height: 550px;
+      }
+
+      &:last-child {
+        left: 25%;
+        bottom: 0;
+        width: 450px;
+        height: 250px;
+      }
+    }
+  }
+
+  h3 {
+    position: relative;
+    z-index: 2;
+    display: block;
+    background-color: $color--yellow;
+    text-align: left;
+    font-weight: 300;
+    font-size: 35px;
+    color: $color--red;
+  }
+
+  h1 {
+    position: relative;
+    z-index: 1;
+    font-size: 96px;
+    display: block;
+    text-align: left;
+    font-weight: 800;
+    align-self: center;
+    color: $color--red;
+  }
+
+  p {
+    font-size: 1.5rem;
+    text-align: left;
+    font-weight: 300;
+  }
+}
+
+.collections--section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+
+  .collections--cards {
+    width: 50%;
+    position: relative;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+    }
+  }
+
+  .collections--informations {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+      display: block;
+      width: 70%;
+      transition: all .3s ease-in-out;
+
+      h3 {
+        position: relative;
+        z-index: 2;
+        display: block;
+        background-color: $color--yellow;
+        text-align: left;
+        font-weight: 300;
+        font-size: 35px;
+        color: $color--red;
+      }
+
+      h1 {
+        position: relative;
+        z-index: 1;
+        font-size: 96px;
+        display: block;
+        text-align: left;
+        font-weight: 800;
+        align-self: center;
+        color: $color--red;
+      }
+
+      button {
+        display: block;
+        text-align: center;
+        padding: 20px 15px;
+        box-shadow: 0 0 0 5px $color--red;
+        background-color: transparent;
+        cursor: pointer;
+        border: none;
+        margin-top: 25px;
+        color: $color--red;
+        font-weight: 600;
+        font-size: 25px;
+        width: fit-content;
+        font-family: 'Presicav';
+        overflow: hidden;
+        position: relative;
+        transition: color .5s cubic-bezier(0.42, 0, 0, 1);
+
+        &::before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: 0%;
+          background-color: $color--red;
+          transform: scaleX(0);
+          transform-origin: right;
+          transition: transform .5s cubic-bezier(0.42, 0, 0, 1);
+          z-index: -1;
+        }
+
+        &:hover {
+          transition: all .5s cubic-bezier(0.42, 0, 0, 1);
+          color: $color--white;
+          &::before {
+            transform: scaleX(1);
+            transform-origin: left;
+            transition: transform .5s cubic-bezier(0.42, 0, 0, 1);
+          }
+        }
+      }
+    }
+
+  }
+
+  &.section--active {
+    z-index: 999;
+  }
+}
+
+.collection--pictures {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  z-index: 1;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all .5s cubic-bezier(0.42, 0, 0, 1);
+
+  
+  p {
+    font-weight: 300;
+    font-size: 40px;
+    color: $color--red;
+    position: relative;
+    top: -50px;
+    opacity: 0;
+    transition: all .5s cubic-bezier(0.42, 0, 0, 1) 0s;
+  }
+
+  &.section--active {
+    opacity: 1;
+    z-index: 999;
+    
+    p {
+      top: 0;
+      opacity: 1;
+      transition: all .5s cubic-bezier(0.42, 0, 0, 1);
+    }
+
+  }
+}
+
+.section {
+  width: 60%;
+  height: calc(80vh - 15px);
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  position: relative;
+}
+
+.card {
+  display: block;
+  width: 90%;
+  height: 90%;
+  opacity: 0.2;
+  background-color: red;
+  transition: all 1s cubic-bezier(0.42, 0, 0, 1);
+  cursor: pointer;
+}
+
+.section>div:nth-child(1).is-inview ~ .card {
+  background-color: green;
+  opacity: 1;
+  transition: all 1s cubic-bezier(0.42, 0, 0, 1);
+  transform: scale(1.05);
+}
+
+p {
+  font-size: 120px;
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+
+@keyframes opacityMoveIn {
+
+  from {
+    top: -50px;
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
+  
+}
+
+@keyframes opacityMoveOut {
+
+  from {
+    top: 0px;
+    opacity: 1;
+  }
+
+  to {
+    top: -50px;
+    opacity: 0;
+  }
+  
+}

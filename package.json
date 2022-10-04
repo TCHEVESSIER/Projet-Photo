@@ -9,5 +9,10 @@
   "devDependencies": {
     "@parcel/transformer-sass": "2.6.2",
     "parcel": "latest"
+  },
+  "dependencies": {
+    "gsap": "^3.11.0",
+    "jquery": "^3.6.0",
+    "locomotive-scroll": "^4.1.4"
   }
 }
